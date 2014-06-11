@@ -14,8 +14,8 @@ namespace MvcRestfulContactManager.Models
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
-        public ApplicationDbContext() : base("name=ApplicationDbContext")
+
+        public ApplicationDbContext() : base("ApplicationDbContext")//base("name=ApplicationDbContext")
         {
         }
 

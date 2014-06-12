@@ -141,6 +141,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CmController.cs" />
+    <Compile Include="Controllers\ContactApiController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -203,6 +204,8 @@
     <Content Include="Views\Cm\Details.cshtml" />
     <Content Include="Views\Cm\Edit.cshtml" />
     <Content Include="Views\Cm\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201406101402024_Initial.resx">

@@ -1,17 +1,45 @@
-﻿@{
+﻿@model IEnumerable<MvcRestfulContactManager.Models.Contact>
+
+
+@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index Home</h2>
+<h2>Index  Contacts</h2>
 
-<div id="body">
-    <ul id="contacts"></ul>
-</div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<!-- -->
+
+
 
 
 <!--
-
-<form id="saveContactForm" method="post">
+    <form id="saveContactForm" method="post">
     <h3>Create a new Contact</h3>
     <p>
         <label for="contactId">Contact Id:</label>
@@ -27,7 +55,7 @@
 @section scripts{
     <script type="text/javascript">
         $(function () {
-            $.getJSON('/api/contact', function (contactsJsonPayload) {
+            $.getJSON('Contact/Index/', function (contactsJsonPayload) {
                 $(contactsJsonPayload).each(function (i, item) {
                     $('#contacts').append('<li>' + item.Name + '</li>');
                 });
@@ -35,7 +63,7 @@
         });
 
         $('#saveContact').click(function () {
-            $.post("api/contact",
+            $.post("Contact/Index/",
                   $("#saveContactForm").serialize(),
                   function (value) {
                       $('#contacts').append('<li>' + value.Name + '</li>');
@@ -45,6 +73,8 @@
         });
 
     </script>
-}
+    
+    
+    }
 
     -->
